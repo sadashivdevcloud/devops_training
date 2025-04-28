@@ -1,6 +1,11 @@
 DOCKER ARCHITECTURE:
 ===================
 
+![image](https://github.com/user-attachments/assets/68a06664-9b86-45b8-a381-4d126d26b1a7)
+
+
+
+
 Docker architecture is designed to be lightweight and efficient, enabling developers to build, ship, and run applications in containers. Here are the key components:
 
 1. **Docker Engine**: The core part of Docker, which follows a client-server architecture. It includes:
