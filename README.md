@@ -1,5 +1,6 @@
 LINUX BASICS
 Linux commands are used to interact with the system's shell (typically Bash). Below is a categorized list of commonly used Linux commands:
+==========================================================================================================================================
 
 🔧 File and Directory Management
 ls – List directory contents
