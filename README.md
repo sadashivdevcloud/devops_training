@@ -174,7 +174,7 @@ A simple Flask web application that uses Redis to count the number of visits to 
 - Python 3
 - Flask
 - Redis
-- Docker (optional)
+- Docker 
 
 ---
 
