@@ -1,6 +1,6 @@
 LINUX BASICS:
 =============
-########
+######
 Linux commands are used to interact with the system's shell (typically Bash). Here's a categorized list of some commonly used Linux commands:
 
 🔧 File and Directory Management
@@ -91,7 +91,7 @@ ssh <user>@host – Connect to another system via SSH
 
 scp – Securely copy files between systems
 
-########
+######
 
 
 
