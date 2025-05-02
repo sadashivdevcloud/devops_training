@@ -90,3 +90,30 @@ spec:
         ports:
         - containerPort: 80
 
+ How to Use
+1.Make sure you have access to a Kubernetes cluster (e.g., Minikube, Docker Desktop, EKS, GKE).
+
+2.Apply the deployment:
+
+kubectl apply -f deployment.yaml
+
+3.Verify the deployment:
+
+kubectl get deployments
+kubectl get pods
+
+4.(Optional) Expose the deployment:
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-service
+spec:
+  selector:
+    app: my-app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: LoadBalancer
+
