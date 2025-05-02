@@ -56,6 +56,10 @@ Docker Compose Commands:
 | **Scaling**    | `docker-compose scale <svc>=<count>`      | Scale a service (deprecated in Compose v3 and later)         |
 
 
+
+
+
+
 This is a simple Flask web application that uses Redis to count how many times the root URL (/) has been accessed.
 
 🔹 Key Components:
@@ -72,3 +76,5 @@ Increments the 'hits' key in Redis.
 
 Returns a message like:
 "Hello World! I have been seen X times."
+
+
