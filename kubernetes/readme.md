@@ -88,7 +88,9 @@ spec:
       - name: my-app-container
         image: nginx:1.21
         ports:
-        - containerPort: 80 ```
+        - containerPort: 80
+yaml```
+
 
 
 How to Use
