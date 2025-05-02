@@ -43,7 +43,7 @@ This guide provides step-by-step instructions to create a Kubernetes cluster in 
     gcloud services enable container.googleapis.com
 
 3.Create a Kubernetes cluster:
-   ```bash
+
    gcloud container clusters create my-cluster \
   --zone us-central1-a \
   --num-nodes 3
