@@ -119,3 +119,7 @@ spec:
     targetPort: 80
   type: LoadBalancer
 
+Apply it using:
+
+kubectl apply -f service.yaml
+
