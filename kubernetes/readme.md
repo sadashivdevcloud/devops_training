@@ -39,6 +39,7 @@ This guide provides step-by-step instructions to create a Kubernetes cluster in 
    gcloud config set project YOUR_PROJECT_ID
 
 2.Enable the GKE API:
+
     ```bash
   gcloud services enable container.googleapis.com
 
