@@ -153,25 +153,41 @@ Docker Compose Commands:
 | **Scaling**    | `docker-compose scale <svc>=<count>`      | Scale a service (deprecated in Compose v3 and later)         |
 
 
+# Flask Redis Counter App
+
+A simple Flask web application that uses Redis to count the number of visits to the homepage. This is useful for demonstrating a basic microservice architecture with Flask and Redis, and includes retry logic for handling Redis connection issues.
+
+---
+
+## 🚀 Features
+
+- Python Flask web server
+- Redis-based persistent counter
+- Automatic retry on Redis connection failures
+- Docker and Docker Compose support
+
+---
+
+## 🧰 Tech Stack
+
+- Python 3
+- Flask
+- Redis
+- Docker (optional)
+
+---
+
+## ⚙️ Setup Instructions
+
+### 🧪 Run Without Docker
+
+1. **Install dependencies**
+   ```bash
+   pip install flask redis
 
 
 
 
-This is a simple Flask web application that uses Redis to count how many times the root URL (/) has been accessed.
 
-🔹 Key Components:
-Flask: Serves a web page at /.
-
-Redis: Stores a persistent counter under the key 'hits'.
-
-Retry Logic: If Redis isn't ready, the app retries connecting up to 5 times with short delays.
-
-🔹 What It Does:
-On each visit to /, it:
-
-Increments the 'hits' key in Redis.
-
-Returns a message like:
-"Hello World! I have been seen X times."
 
 
