@@ -38,5 +38,29 @@ This guide provides step-by-step instructions to create a Kubernetes cluster in 
    gcloud auth login
    gcloud config set project YOUR_PROJECT_ID
 
+2.Enable the GKE API:
+    ```bash
+  gcloud services enable container.googleapis.com
+
+3.Create a Kubernetes cluster:
+ 
+ ```bash
+ gcloud container clusters create my-cluster \
+  --zone us-central1-a \
+  --num-nodes 3
+4.Get cluster credentials to use with kubectl:
+
+ 
+ ```bash
+gcloud container clusters get-credentials my-cluster --zone us-central1-a
+
+
+5.Verify the cluster:
+ 
+ ```bash
+kubectl get nodes
+
+
+
 <img width="960" alt="k8 setup on gke" src="https://github.com/user-attachments/assets/3f994f06-fc2f-4067-a22a-56de89a86337" />
 
