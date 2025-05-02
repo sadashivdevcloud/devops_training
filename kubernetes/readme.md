@@ -40,7 +40,6 @@ This guide provides step-by-step instructions to create a Kubernetes cluster in 
 
 2.Enable the GKE API:
 
-    ```bash
     gcloud services enable container.googleapis.com
 
 3.Create a Kubernetes cluster:
