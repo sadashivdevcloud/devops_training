@@ -198,6 +198,11 @@ A simple Flask web application that uses Redis to count the number of visits to 
 
 └── README.md             # Project documentation
 
+ Sample Output:
+ =============
+
+ Hello World! I have been seen 3 times.
+
 
 
 
