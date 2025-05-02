@@ -90,7 +90,9 @@ spec:
         ports:
         - containerPort: 80
 
- How to Use
+
+How to Use
+
 1.Make sure you have access to a Kubernetes cluster (e.g., Minikube, Docker Desktop, EKS, GKE).
 
 2.Apply the deployment:
