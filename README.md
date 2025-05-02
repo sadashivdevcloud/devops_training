@@ -1,61 +1,145 @@
-LINUX BASICS
+## LINUX BASICS
 Linux commands are used to interact with the system's shell (typically Bash). Below is a categorized list of commonly used Linux commands:
-==========================================================================================================================================
 
-🔧 File and Directory Management
-ls – List directory contents
-cd – Change directory
-pwd – Print working directory
-mkdir – Create a new directory
-rm – Remove files or directories
-cp – Copy files or directories
-mv – Move or rename files or directories
-touch – Create an empty file
-📄 File Viewing and Editing
-cat – View file contents
-less – View file contents one page at a time
-nano – Command-line text editor
-vim – Advanced command-line text editor
-head – View the first lines of a file
-tail – View the last lines of a file
-🔍 Searching and Finding
-find – Search for files in a directory hierarchy
-grep – Search inside files for matching text
-locate – Quickly find files by name
-🖥️ System Monitoring
-top – View running processes
-htop – Interactive process viewer (enhanced top)
-df – Report disk space usage
-du – Estimate file or directory size
-free – Show memory usage
-📦 Package Management (Ubuntu/Debian)
-apt update – Update package lists
-apt upgrade – Upgrade installed packages
-apt install <package> – Install a new package
-apt remove <package> – Remove a package
-👤 User Management
-whoami – Show current user
-id – Show user ID and group ID
-adduser <username> – Add a new user
-passwd <username> – Change user password
-su – Switch user
-sudo – Run a command with superuser privileges
-🔒 Permissions
-chmod – Change file permissions
-chown – Change file ownership
-umask – Set default file permissions
-🔗 Networking
-ping <host> – Test network connectivity
-ifconfig / ip a – View network interfaces
-netstat – Show network connections
-ssh <user>@host – Connect to another system via SSH
-scp – Securely copy files between systems
+### 🔧 File and Directory Management
+- **`ls`** – List directory contents  
+- **`cd`** – Change directory  
+- **`pwd`** – Print working directory  
+- **`mkdir`** – Create a new directory  
+- **`rm`** – Remove files or directories  
+- **`cp`** – Copy files or directories  
+- **`mv`** – Move or rename files or directories  
+- **`touch`** – Create an empty file  
 
+### 📄 File Viewing and Editing
+- **`cat`** – View file contents  
+- **`less`** – View file contents one page at a time  
+- **`nano`** – Command-line text editor  
+- **`vim`** – Advanced command-line text editor  
+- **`head`** – View the first lines of a file  
+- **`tail`** – View the last lines of a file  
 
+### 🔍 Searching and Finding
+- **`find`** – Search for files in a directory hierarchy  
+- **`grep`** – Search inside files for matching text  
+- **`locate`** – Quickly find files by name  
 
+### 🖥️ System Monitoring
+- **`top`** – View running processes  
+- **`htop`** – Interactive process viewer (enhanced `top`)  
+- **`df`** – Report disk space usage  
+- **`du`** – Estimate file or directory size  
+- **`free`** – Show memory usage  
 
+### 📦 Package Management (Ubuntu/Debian)
+- **`apt update`** – Update package lists  
+- **`apt upgrade`** – Upgrade installed packages  
+- **`apt install <package>`** – Install a new package  
+- **`apt remove <package>`** – Remove a package  
 
+### 👤 User Management
+- **`whoami`** – Show current user  
+- **`id`** – Show user ID and group ID  
+- **`adduser <username>`** – Add a new user  
+- **`passwd <username>`** – Change user password  
+- **`su`** – Switch user  
+- **`sudo`** – Run a command with superuser privileges  
 
+### 🔒 Permissions
+- **`chmod`** – Change file permissions  
+- **`chown`** – Change file ownership  
+- **`umask`** – Set default file permissions  
 
+### 🔗 Networking
+- **`ping <host>`** – Test network connectivity  
+- **`ifconfig`** / **`ip a`** – View network interfaces  
+- **`netstat`** – Show network connections  
+- **`ssh <user>@host`** – Connect to another system via SSH  
+- **`scp`** – Securely copy files between systems  
 
+---
 
+## DOCKER ARCHITECTURE
+
+![Docker Architecture](https://github.com/user-attachments/assets/68a06664-9b86-45b8-a381-4d126d26b1a7)
+
+Docker's architecture is designed to be lightweight and efficient, enabling developers to build, ship, and run applications in containers. Below are the key components:
+
+### 1. **Docker Engine**
+The core part of Docker, following a client-server architecture:
+- **Server (`dockerd`)** – The Docker daemon that creates and manages Docker images, containers, networks, and volumes.  
+- **REST API** – Interfaces with the Docker daemon to execute commands.  
+- **Command-Line Interface (CLI)** – Allows users to interact with Docker using commands.  
+
+### 2. **Docker Client**
+The interface through which users interact with Docker. It sends commands to the Docker daemon via the Docker API.
+
+### 3. **Docker Registries**
+Repositories where Docker images are stored. Examples include:
+- **Docker Hub** – The default public registry.  
+- **Private Registries** – For custom use cases.  
+
+### 4. **Docker Objects**
+- **Images** – Read-only templates used to create containers.  
+- **Containers** – Executable instances of Docker images that run applications.  
+- **Networks** – Allow containers to communicate with each other.  
+- **Volumes** – Persist data generated by and used by containers.  
+
+---
+
+## DOCKER COMPOSE
+
+Docker Compose is a tool that allows you to define and run multi-container Docker applications. It simplifies managing complex applications with multiple components.
+
+### Key Features:
+- Define services, networks, and volumes in a declarative YAML file.  
+- Manage related services in a single environment.  
+
+### Common Docker Compose Commands
+
+| **Category**   | **Command**                              | **Description**                                              |
+|----------------|-------------------------------------------|--------------------------------------------------------------|
+| **Setup**      | `docker-compose up`                       | Build, start, and attach to containers                       |
+|                | `docker-compose up -d`                    | Start containers in detached mode                            |
+|                | `docker-compose build`                    | Build or rebuild services                                    |
+|                | `docker-compose build --no-cache`         | Build without cache                                          |
+|                | `docker-compose pull`                     | Pull service images                                          |
+| **Teardown**   | `docker-compose down`                     | Stop and remove containers, networks, volumes, and images    |
+|                | `docker-compose down --volumes`           | Also remove named volumes                                    |
+|                | `docker-compose stop`                     | Stop services                                                |
+|                | `docker-compose rm`                       | Remove stopped containers                                    |
+| **Management** | `docker-compose start`                    | Start existing services                                      |
+|                | `docker-compose restart`                  | Restart services                                             |
+|                | `docker-compose logs`                     | Show service logs                                            |
+|                | `docker-compose logs -f`                  | Follow logs output                                           |
+|                | `docker-compose exec <service> <command>` | Run command in a running container                           |
+|                | `docker-compose run <service> <command>`  | Run one-off command in a new container                       |
+|                | `docker-compose ps`                       | List running containers                                      |
+| **Debugging**  | `docker-compose config`                   | Validate and show config                                     |
+|                | `docker-compose top`                      | Display container processes                                  |
+| **Scaling**    | `docker-compose scale <svc>=<count>`      | Scale a service (deprecated in Compose v3 and later)         |
+
+---
+
+## FLASK REDIS COUNTER APP
+
+A simple Flask web application that uses Redis to count the number of visits to the homepage. This demonstrates a basic microservice architecture with Flask and Redis.
+
+### 🚀 Features
+- Python Flask web server  
+- Redis-based persistent counter  
+- Automatic retry on Redis connection failures  
+- Docker and Docker Compose support  
+
+### 🧰 Tech Stack
+- Python 3  
+- Flask  
+- Redis  
+- Docker (optional)  
+
+### ⚙️ Setup Instructions
+
+#### 🧪 Run Without Docker
+1. **Install dependencies**:
+   ```bash
+   pip install flask redis
