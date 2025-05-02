@@ -184,6 +184,17 @@ A simple Flask web application that uses Redis to count the number of visits to 
 1. **Install dependencies**
    ```bash
    pip install flask redis
+   
+📂 Project Structure
+bash
+Copy
+Edit
+.
+├── app.py                # Main Flask app
+├── requirements.txt      # Python dependencies
+├── Dockerfile            # Build instructions for Docker
+├── docker-compose.yml    # Docker Compose setup
+└── README.md             # Project documentation
 
 
 
