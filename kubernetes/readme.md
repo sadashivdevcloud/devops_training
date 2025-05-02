@@ -44,17 +44,17 @@ This guide provides step-by-step instructions to create a Kubernetes cluster in 
 
 3.Create a Kubernetes cluster:
 
-   gcloud container clusters create my-cluster \
-  --zone us-central1-a \
-  --num-nodes 3
+     gcloud container clusters create my-cluster \
+     --zone us-central1-a \
+     --num-nodes 3
 
 4.Get cluster credentials to use with kubectl:
-   ```bash
+     ```bash
      gcloud container clusters get-credentials my-cluster --zone us-central1-a
 
 5.Verify the cluster:
-   ```bash
-    kubectl get nodes
+     ```bash
+     kubectl get nodes
 
 
 
