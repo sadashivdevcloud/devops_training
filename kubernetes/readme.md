@@ -60,3 +60,33 @@ This guide provides step-by-step instructions to create a Kubernetes cluster in 
 
 <img width="960" alt="k8 setup on gke" src="https://github.com/user-attachments/assets/3f994f06-fc2f-4067-a22a-56de89a86337" />
 
+
+# Kubernetes Deployment: My App
+
+This repository contains a basic Kubernetes Deployment YAML file to deploy a sample application using NGINX.
+
+## 📄 File: `deployment.yaml`
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+  labels:
+    app: my-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app-container
+        image: nginx:1.21
+        ports:
+        - containerPort: 80
+
