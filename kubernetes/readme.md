@@ -83,7 +83,8 @@ COPY . .
 EXPOSE 8080
 CMD ["node", "app.js"]
 
- Step 2: Build and Push Your Docker Image
+**Step 2: Build and Push Your Docker Image**
+
 1.Build the image:
 
 docker build -t <your-dockerhub-username>/<image-name>:<tag> .
