@@ -118,7 +118,8 @@ spec:
         ports:
         - containerPort: 8080
 
-service.yaml
+service.yaml:
+============
 
 apiVersion: v1
 kind: Service
