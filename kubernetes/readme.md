@@ -72,7 +72,7 @@ This guide explains how to deploy a simple Node.js web application using Docker 
 
 Ensure you have a simple web app (e.g., built with Node.js, Flask, etc.). Below is an example `Dockerfile` to containerize a Node.js app.
 
-**Dockerfile:**
+Dockerfile:
 
 ```Dockerfile
 FROM node:18
@@ -83,7 +83,7 @@ COPY . .
 EXPOSE 8080
 CMD ["node", "app.js"]
 
-**Step 2: Build and Push Your Docker Image**
+Step 2: Build and Push Your Docker Image
 
 1.Build the image:
 
@@ -118,6 +118,7 @@ spec:
         image: <your-dockerhub-username>/<image-name>:<tag>
         ports:
         - containerPort: 8080
+
 
 service.yaml:
 ============
