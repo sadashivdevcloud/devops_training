@@ -66,7 +66,10 @@ This guide provides step-by-step instructions to create a Kubernetes cluster in 
 
 
 
-***create a Docker container that runs a Python web application (likely Django) with all dependencies installed in a virtual environment, using Ubuntu as the base image.**
+
+
+
+**create a Docker container that runs a Python web application (likely Django) with all dependencies installed in a virtual environment, using Ubuntu as the base image.**
 
 
 Example Dockerfile:
