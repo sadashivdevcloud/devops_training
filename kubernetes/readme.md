@@ -70,6 +70,7 @@ This guide provides step-by-step instructions to create a Kubernetes cluster in 
 
 
 
+
 # Django Web Application in Docker and Kubernetes
 
 This repository demonstrates how to containerize a Django web application using Docker and deploy it to Kubernetes using Deployment and Service manifests.
@@ -194,4 +195,3 @@ Kubernetes cluster (minikube or cloud)
 kubectl CLI
 
 Docker Hub account
-
