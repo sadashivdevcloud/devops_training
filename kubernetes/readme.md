@@ -69,40 +69,46 @@ This guide provides step-by-step instructions to create a Kubernetes cluster in 
 
 
 
-**create a Docker container that runs a Python web application (likely Django) with all dependencies installed in a virtual environment, using Ubuntu as the base image.**
+Django Web Application in Docker and Kubernetes
+This repository demonstrates how to containerize a Django web application using Docker and deploy it to Kubernetes using Deployment and Service manifests.
 
-
-Example Dockerfile:
+📦 Docker Setup
+Dockerfile
+Below is the sample Dockerfile that uses Ubuntu as the base image and runs a Python (likely Django) web application inside a virtual environment.
 
 FROM ubuntu
 WORKDIR /app
+
 COPY requirements.txt /app/
 COPY devops /app/
+
 RUN apt-get update && apt-get install -y python3 python3-pip python3-venv
+
 SHELL ["/bin/bash", "-c"]
+
 RUN python3 -m venv venv1 && \
-source venv1/bin/activate && \
-pip install --no-cache-dir -r requirements.txt
+    source venv1/bin/activate && \
+    pip install --no-cache-dir -r requirements.txt
+
 EXPOSE 8000
+
 CMD source venv1/bin/activate && python3 manage.py runserver 0.0.0.0:8000
-
-
-2. Build and Push Your Docker Image.
-
-1.Build the image:
-
+🛠️ Build and Push Docker Image
+Step 1: Build the Image
+bash
+Copy
+Edit
 docker build -t <your-dockerhub-username>/<image-name>:<tag> .
-
-2.Push the image to Docker Hub:
-
+Step 2: Push the Image to Docker Hub
+bash
+Copy
+Edit
 docker push <your-dockerhub-username>/<image-name>:<tag>
-
-3.. Write Kubernetes Manifest Files
-
-You need two main resources: Deployment and Service.
-
-deployment.yaml
-
+☸️ Kubernetes Deployment
+1. Deployment Manifest (deployment.yaml)
+yaml
+Copy
+Edit
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -124,9 +130,10 @@ spec:
         image: <your-dockerhub-username>/<image-name>:<tag>
         ports:
         - containerPort: 8080
-		
-service.yaml
-
+2. Service Manifest (service.yaml)
+yaml
+Copy
+Edit
 apiVersion: v1
 kind: Service
 metadata:
@@ -139,25 +146,44 @@ spec:
       port: 80
       targetPort: 8080
   type: LoadBalancer
-  
- 
- 4. Deploy to Kubernetes
- 
- 1.Apply the manifests:
- 
- kubectl apply -f deployment.yaml
+🚀 Deploy to Kubernetes
+Apply the Kubernetes manifests:
+bash
+Copy
+Edit
+kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
-
-2.Verify the deployment and service:
-
+Verify resources:
+bash
+Copy
+Edit
 kubectl get deployments
 kubectl get services
+🌐 Access Your Application
+If you're using a cloud provider like AWS, GCP, or Azure, the LoadBalancer service will expose a public IP.
 
-5. Access Your Application
+Use that external IP in your browser to access the application:
 
-If you are using a cloud provider like AWS, GCP, or Azure, the service of type LoadBalancer will provision a public IP.
-Use the external IP to access your application in the browser.
+cpp
+Copy
+Edit
+http://<external-ip>
+📁 Project Structure
+Copy
+Edit
+.
+├── Dockerfile
+├── requirements.txt
+├── devops/
+│   └── manage.py
+├── deployment.yaml
+├── service.yaml
+└── README.md
+✅ Requirements
+Docker
 
+Kubernetes cluster (minikube or cloud)
 
+kubectl CLI
 
-
+Docker Hub account
