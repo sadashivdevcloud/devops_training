@@ -86,37 +86,23 @@ Below is the sample `Dockerfile` that uses **Ubuntu** as the base image and runs
 ```Dockerfile
 FROM ubuntu
 WORKDIR /app
-
 COPY requirements.txt /app/
 COPY devops /app/
-
 RUN apt-get update && apt-get install -y python3 python3-pip python3-venv
-
 SHELL ["/bin/bash", "-c"]
-
 RUN python3 -m venv venv1 && \
     source venv1/bin/activate && \
     pip install --no-cache-dir -r requirements.txt
-
 EXPOSE 8000
-
 CMD source venv1/bin/activate && python3 manage.py runserver 0.0.0.0:8000
+
 🛠️ Build and Push Docker Image
 Step 1: Build the Image
-bash
-Copy
-Edit
 docker build -t <your-dockerhub-username>/<image-name>:<tag> .
 Step 2: Push the Image to Docker Hub
-bash
-Copy
-Edit
 docker push <your-dockerhub-username>/<image-name>:<tag>
 ☸️ Kubernetes Deployment
 1. Deployment Manifest (deployment.yaml)
-yaml
-Copy
-Edit
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -139,9 +125,6 @@ spec:
         ports:
         - containerPort: 8080
 2. Service Manifest (service.yaml)
-yaml
-Copy
-Edit
 apiVersion: v1
 kind: Service
 metadata:
@@ -154,31 +137,24 @@ spec:
       port: 80
       targetPort: 8080
   type: LoadBalancer
+
 🚀 Deploy to Kubernetes
 Apply the Kubernetes manifests:
-bash
-Copy
-Edit
+
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
+
 Verify resources:
-bash
-Copy
-Edit
 kubectl get deployments
 kubectl get services
 🌐 Access Your Application
 If you're using a cloud provider like AWS, GCP, or Azure, the LoadBalancer service will expose a public IP.
 
 Use that external IP in your browser to access the application:
-
-cpp
-Copy
-Edit
 http://<external-ip>
+
+
 📁 Project Structure
-Copy
-Edit
 .
 ├── Dockerfile
 ├── requirements.txt
@@ -187,11 +163,10 @@ Edit
 ├── deployment.yaml
 ├── service.yaml
 └── README.md
+
+
 ✅ Requirements
 Docker
-
 Kubernetes cluster (minikube or cloud)
-
 kubectl CLI
-
 Docker Hub account
