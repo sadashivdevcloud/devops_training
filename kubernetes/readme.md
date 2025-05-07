@@ -83,7 +83,6 @@ This repository demonstrates how to containerize a Django web application using 
 
 Below is the sample `Dockerfile` that uses **Ubuntu** as the base image and runs a Python (likely Django) web application inside a **virtual environment**.
 
-```Dockerfile
 FROM ubuntu
 WORKDIR /app
 COPY requirements.txt /app/
