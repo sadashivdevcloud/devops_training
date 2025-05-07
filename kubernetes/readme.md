@@ -71,6 +71,7 @@ This guide provides step-by-step instructions to create a Kubernetes cluster in 
 
 
 
+
 # Django Web Application in Docker and Kubernetes
 
 This repository demonstrates how to containerize a Django web application using Docker and deploy it to Kubernetes using Deployment and Service manifests.
@@ -83,19 +84,25 @@ This repository demonstrates how to containerize a Django web application using 
 
 Below is the sample `Dockerfile` that uses **Ubuntu** as the base image and runs a Python (likely Django) web application inside a **virtual environment**.
 
+```Dockerfile
 FROM ubuntu
 WORKDIR /app
+
 COPY requirements.txt /app/
 COPY devops /app/
+
 RUN apt-get update && apt-get install -y python3 python3-pip python3-venv
+
 SHELL ["/bin/bash", "-c"]
+
 RUN python3 -m venv venv1 && \
     source venv1/bin/activate && \
     pip install --no-cache-dir -r requirements.txt
-EXPOSE 8000
-CMD source venv1/bin/activate && python3 manage.py runserver 0.0.0.0:8000 
 
-#🛠️ Build and Push Docker Image #
+EXPOSE 8000
+
+CMD source venv1/bin/activate && python3 manage.py runserver 0.0.0.0:8000
+🛠️ Build and Push Docker Image
 Step 1: Build the Image
 docker build -t <your-dockerhub-username>/<image-name>:<tag> .
 Step 2: Push the Image to Docker Hub
@@ -136,13 +143,10 @@ spec:
       port: 80
       targetPort: 8080
   type: LoadBalancer
-
 🚀 Deploy to Kubernetes
 Apply the Kubernetes manifests:
-
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
-
 Verify resources:
 kubectl get deployments
 kubectl get services
@@ -150,8 +154,9 @@ kubectl get services
 If you're using a cloud provider like AWS, GCP, or Azure, the LoadBalancer service will expose a public IP.
 
 Use that external IP in your browser to access the application:
-http://<external-ip>
 
+
+http://<external-ip>
 
 📁 Project Structure
 .
@@ -162,16 +167,9 @@ http://<external-ip>
 ├── deployment.yaml
 ├── service.yaml
 └── README.md
-
-
 ✅ Requirements
 Docker
 Kubernetes cluster (minikube or cloud)
 kubectl CLI
 Docker Hub account
-
-
-created Docker image using Dockerfile and push to Dockerhub
-
-<img width="960" alt="docker_image" src="https://github.com/user-attachments/assets/9eb09ef7-ebff-4326-be41-cec1df1af24b" />
 
