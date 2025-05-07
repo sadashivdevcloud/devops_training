@@ -94,9 +94,9 @@ RUN python3 -m venv venv1 && \
     source venv1/bin/activate && \
     pip install --no-cache-dir -r requirements.txt
 EXPOSE 8000
-CMD source venv1/bin/activate && python3 manage.py runserver 0.0.0.0:8000 ```
+CMD source venv1/bin/activate && python3 manage.py runserver 0.0.0.0:8000 
 
-🛠️ Build and Push Docker Image
+#🛠️ Build and Push Docker Image #
 Step 1: Build the Image
 docker build -t <your-dockerhub-username>/<image-name>:<tag> .
 Step 2: Push the Image to Docker Hub
