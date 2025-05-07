@@ -170,3 +170,8 @@ Docker
 Kubernetes cluster (minikube or cloud)
 kubectl CLI
 Docker Hub account
+
+
+**created Docker image using Dockerfile and push to Dockerhub:**
+<img width="960" alt="docker_image" src="https://github.com/user-attachments/assets/9eb09ef7-ebff-4326-be41-cec1df1af24b" />
+
