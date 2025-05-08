@@ -9,9 +9,8 @@ Chart metadata (Chart.yaml): Describes the chart (name, version, description).
 
 Optional files like README.md, LICENSE, and requirements.yaml for dependencies.
 
-Helm chart structure:
-====================
-,,,
+🗂️ Helm Chart Directory Structure
+
 mychart/
 ├── Chart.yaml          # Chart metadata
 ├── values.yaml         # Default configuration values
@@ -20,4 +19,3 @@ mychart/
 │   ├── deployment.yaml
 │   ├── service.yaml
 │   └── _helpers.tpl    # Helper template functions
-
