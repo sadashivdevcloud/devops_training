@@ -11,7 +11,7 @@ Optional files like README.md, LICENSE, and requirements.yaml for dependencies.
 
 Helm chart structure:
 ====================
-
+,,,
 mychart/
 ├── Chart.yaml          # Chart metadata
 ├── values.yaml         # Default configuration values
