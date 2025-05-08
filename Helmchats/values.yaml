@@ -1,0 +1,18 @@
+replicaCount: 3
+
+image:
+  repository: sadashivdevops/webapp_2
+  tag: test2
+  pullPolicy: IfNotPresent
+
+containerPort: 8000
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+  limits:
+    cpu: "200m"
+    memory: "256Mi"
+
+appLabel: nginx
