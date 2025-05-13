@@ -1,6 +1,16 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: CloudFormation template to provision EC2, S3, and VPC
 
+Parameters:
+  KeyName:
+    Description: Name of an existing EC2 KeyPair to enable SSH access to the instance
+    Type: AWS::EC2::KeyPair::KeyName
+
+  LatestAmiId:
+    Description: Latest Amazon Linux 2 AMI from SSM Parameter Store
+    Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
+    Default: /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2
+
 Resources:
   # VPC
   MyVPC:
@@ -87,8 +97,8 @@ Resources:
     Type: AWS::EC2::Instance
     Properties:
       InstanceType: t2.micro
-      KeyName: MyKeyPair # Replace with your key pair name
-      ImageId: ami-0c02fb55956c7d316 # Replace with a valid AMI ID for your region
+      KeyName: !Ref KeyName
+      ImageId: !Ref LatestAmiId
       NetworkInterfaces:
         - AssociatePublicIpAddress: true
           SubnetId: !Ref MySubnet
@@ -103,7 +113,7 @@ Resources:
   MyS3Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: my-unique-s3-bucket-name-12345 # Replace with a unique bucket name
+      BucketName: my-unique-s3-bucket-name-124445  # Ensure this name is globally unique
       AccessControl: Private
       Tags:
         - Key: Name
