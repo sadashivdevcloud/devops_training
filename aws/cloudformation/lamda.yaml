@@ -1,37 +1,49 @@
----
-AWSTemplateFormatVersion: "2010-09-09"
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Deploy HelloWorld Lambda Function
+
 Resources:
-  MyLambdaRole:
-    Type: 'AWS::IAM::Role'
+  HelloWorldLambdaFunction:
+    Type: AWS::Lambda::Function
     Properties:
+      FunctionName: HelloWorldFunction
+      Runtime: nodejs18.x
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Handler: index.handler
+      Code:
+        ZipFile: |
+          exports.handler = async (event) => {
+              const response = {
+                  statusCode: 200,
+                  body: JSON.stringify('Hello from Lambda!'),
+              };
+              return response;
+          };
+
+  LambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: HelloWorldLambdaExecutionRole
       AssumeRolePolicyDocument:
-        Version: "2012-10-17"
+        Version: '2012-10-17'
         Statement:
           - Effect: Allow
             Principal:
-              Service:
-                - lambda.amazonaws.com
-            Action:
-              - 'sts:AssumeRole'
-      Path: /
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
       Policies:
-        - PolicyName: root
+        - PolicyName: LambdaBasicExecution
           PolicyDocument:
-            Version: "2012-10-17"
+            Version: '2012-10-17'
             Statement:
               - Effect: Allow
-                Action: 's3:*'
-                Resource: '*'
-  
-  MyLambdaFunction:
-    Type: AWS::Lambda::Function
-    Properties:
-      Role: !GetAtt MyLambdaRole.Arn
-      Runtime: python3.9
-      Handler: lambda.lambda_handler
-      Code:
-        S3Bucket: mybucketforlambdafunction
-        S3Key: lambda.zip
-      Tags:
-        - Key: Name 
-          Value: MyLambdaFunction
+                Action:
+                  - logs:CreateLogGroup
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Resource: "*"
+
+Outputs:
+  LambdaFunctionName:
+    Value: !Ref HelloWorldLambdaFunction
+    Description: "HelloWorld Lambda Function Name"
+
