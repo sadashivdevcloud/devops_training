@@ -174,3 +174,12 @@ api.Metric.send(metric='custom.metric', points=100)
 
 <img width="960" alt="{7F430465-0F7C-4D01-A744-E801A589248F}" src="https://github.com/user-attachments/assets/4cc7adb0-79a0-4791-9c40-5cbbb597b239" />
 
+
+<img width="960" alt="{2892EFE6-9F8A-499E-8E5B-AADCF34F8C2D}" src="https://github.com/user-attachments/assets/36bc101f-946b-4e79-a66b-a3f73cb2632c" />
+
+
+
+<img width="960" alt="{E5FBCA38-207B-4F22-B173-523C24EC4DC5}" src="https://github.com/user-attachments/assets/167e0e22-e362-4e45-a470-54aba11b5fa5" />
+
+
+
