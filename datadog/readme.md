@@ -171,3 +171,6 @@ api.Metric.send(metric='custom.metric', points=100)
 ```
 
 ---
+
+<img width="960" alt="{7F430465-0F7C-4D01-A744-E801A589248F}" src="https://github.com/user-attachments/assets/4cc7adb0-79a0-4791-9c40-5cbbb597b239" />
+
