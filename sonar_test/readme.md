@@ -213,4 +213,6 @@ sudo docker-compose down -v     # Remove volumes
 
 <img width="960" height="540" alt="{AA79A6F8-3267-40C7-8D3A-6F3760CFB0C7}" src="https://github.com/user-attachments/assets/736952d9-836e-4f76-bf2b-c295956e0cf6" />
 
+<img width="960" height="540" alt="{4C779F56-8489-48FF-BC1A-D612378491C3}" src="https://github.com/user-attachments/assets/6369b721-ac54-4c3f-8c49-71a4c273e5e8" />
+
 
