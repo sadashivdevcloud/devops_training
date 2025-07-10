@@ -206,3 +206,11 @@ jobs:
 sudo docker-compose down        # Stop services
 sudo docker-compose down -v     # Remove volumes
 ```
+<img width="960" height="540" alt="{F3A4818A-7F6F-4DFD-8694-68DAA628C54A}" src="https://github.com/user-attachments/assets/bf313b1c-b479-4e76-a280-856d13b2d822" />
+
+
+<img width="960" height="540" alt="{AA79A6F8-3267-40C7-8D3A-6F3760CFB0C7}" src="https://github.com/user-attachments/assets/736952d9-836e-4f76-bf2b-c295956e0cf6" />
+
+<img width="960" height="540" alt="{AA79A6F8-3267-40C7-8D3A-6F3760CFB0C7}" src="https://github.com/user-attachments/assets/736952d9-836e-4f76-bf2b-c295956e0cf6" />
+
+
